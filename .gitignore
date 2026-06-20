@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+
+# Data — too large to commit
+data/
+
+# Model checkpoints and outputs — too large to commit
+outputs/
+
+# Weights & Biases local files
+wandb/
+
+# Results are committed (small JSON/CSV)
+# results/ is NOT ignored
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# HPC logs
+*.out
+*.err
+slurm-*.out
