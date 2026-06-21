@@ -3,7 +3,7 @@
 
 model:
     name: "allenai/led-large-16384"
-    max_input_tokens: 16384
+    max_input_tokens: 4096
     max_output_tokens: 512
 
 data:
@@ -22,7 +22,8 @@ training:
     lr_scheduler_type: "linear"      # fixed: was lr_schedular_type (typo)
     warmup_steps: 500
     weight_decay: 0.01
-    fp16: true
+    fp16: false
+    bf16: true
     evaluation_strategy: "epoch"
     save_strategy: "epoch"
     load_best_model_at_end: true

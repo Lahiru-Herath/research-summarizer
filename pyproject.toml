@@ -7,8 +7,10 @@ requires-python = ">=3.11"
 
 dependencies = [
     # Deep learning core
-    "torch==2.5.1",
-    "accelerate==0.34.2",
+    "torch",
+    "torchvision",
+    "torchaudio",
+    "accelerate>=0.34.2",
     "datasets==2.20.0",
     "tokenizers==0.20.3",
     # NLP preprocessing
@@ -42,10 +44,12 @@ dependencies = [
     "peft==0.13.2",
     "sentence-transformers==3.1.1",
     "pip>=26.1.2",
+    "tiktoken>=0.13.0",
+    "sentencepiece>=0.2.1",
 ]
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "editables"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
