@@ -11,9 +11,9 @@ model:
 
 data:
     arxiv_dataset_id: "ccdv/arxiv-summarization"
-    pubmed_dataset_id: "ccdv/pubmed"
-    samples_per_class: 10000 # balanced — 10K from each dataset for training
-    input_fields: ["title", "abstract"] # concatenated as: "[title] [SEP] [abstract]"
+    pubmed_dataset_id: "ccdv/pubmed-summarization"   # fixed: was ccdv/pubmed
+    samples_per_class: 10000
+    input_fields: ["title", "abstract"]
 
 training:
     seed: 42

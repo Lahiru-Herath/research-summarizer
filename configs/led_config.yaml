@@ -14,12 +14,12 @@ data:
 training:
     seed: 42
     epochs: 3
-    per_device_training_batch_size: 1
-    gradient_accumulation_steps: 8 # effective batch size = 8
+    per_device_train_batch_size: 1   # fixed: was per_device_training_batch_size
+    gradient_accumulation_steps: 8   # effective batch size = 8
     per_device_eval_batch_size: 1
     optimizer: "adamw_torch"
     learning_rate: 3.0e-5
-    lr_schedular_type: "linear"
+    lr_scheduler_type: "linear"      # fixed: was lr_schedular_type (typo)
     warmup_steps: 500
     weight_decay: 0.01
     fp16: true
