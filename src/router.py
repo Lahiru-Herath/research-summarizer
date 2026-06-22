@@ -27,28 +27,23 @@ Usage:
 
 from __future__ import annotations
 
+from pathlib import Path
+
 import torch
 import torch.nn.functional as F
 from transformers import (
-    AutoModelForSequenceClassification,
     AutoModelForSeq2SeqLM,
     AutoTokenizer,
     PegasusTokenizer,
 )
 
-from pathlib import Path
+from src.classifier import load_classifier, predict_domain as clf_predict_domain
 
-
-
-
-# ── Constants ─────────────────────────────────────────────────────────────────
+# ── Project root resolution ───────────────────────────────────────────────────
 
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-# Sanity check — if the outputs dir isn't found, try resolving from cwd
 if not (_PROJECT_ROOT / "outputs").exists():
-    _PROJECT_ROOT = Path.cwd()
-    # Walk up until we find the outputs directory
     for parent in [Path.cwd()] + list(Path.cwd().parents):
         if (parent / "outputs" / "classifier").exists():
             _PROJECT_ROOT = parent
@@ -56,32 +51,33 @@ if not (_PROJECT_ROOT / "outputs").exists():
 
 print(f"[router.py] Project root resolved to: {_PROJECT_ROOT}")
 
-CLASSIFIER_PATH   = str(_PROJECT_ROOT / "outputs" / "classifier")
-BART_PATH         = str(_PROJECT_ROOT / "outputs" / "bart_finetuned")
-PEGASUS_PATH      = "google/pegasus-pubmed"   # zero-shot — HF Hub, not local
+# ── Constants ─────────────────────────────────────────────────────────────────
 
-print(f"Paths:\n  Classifier: {CLASSIFIER_PATH}\n  BART: {BART_PATH}\n  PEGASUS: {PEGASUS_PATH}\n")
+CLASSIFIER_PATH = str(_PROJECT_ROOT / "outputs" / "classifier")
+BART_PATH       = str(_PROJECT_ROOT / "outputs" / "bart_finetuned")
+PEGASUS_PATH    = "google/pegasus-pubmed"   # zero-shot — HF Hub
 
-LABEL_MAP         = {0: "General", 1: "Medical"}
-SUMMARIZER_MAP    = {
+print(f"Paths:\n  Classifier : {CLASSIFIER_PATH}\n  BART       : {BART_PATH}\n  PEGASUS    : {PEGASUS_PATH}\n")
+
+LABEL_MAP = {0: "General", 1: "Medical"}
+SUMMARIZER_MAP = {
     "General": "BART fine-tuned (facebook/bart-large-cnn → arXiv)",
     "Medical": "PEGASUS zero-shot (google/pegasus-pubmed)",
 }
 
-CLASSIFIER_MAX_LEN  = 512
-BART_MAX_INPUT      = 1024
-PEGASUS_MAX_INPUT   = 1024
-MAX_NEW_TOKENS      = 256
-DEFAULT_THRESHOLD   = 0.5   # minimum confidence to trust classifier; below this
-                             # the router still picks the argmax but flags it
+CLASSIFIER_MAX_LEN = 512
+BART_MAX_INPUT     = 1024
+PEGASUS_MAX_INPUT  = 1024
+MAX_NEW_TOKENS     = 256
+DEFAULT_THRESHOLD  = 0.5
 
 
 class DomainRouter:
     """Routes a research paper to the best domain-specific summarizer.
 
     Loads three models at construction time and keeps them in memory:
-        - BERT classifier  (domain detection)
-        - BART fine-tuned  (General / arXiv summarization)
+        - BERT classifier   (src/classifier.py — domain detection)
+        - BART fine-tuned   (General / arXiv summarization)
         - PEGASUS zero-shot (Medical / PubMed summarization)
 
     Args:
@@ -108,12 +104,12 @@ class DomainRouter:
         self.threshold = threshold
         print(f"DomainRouter initialising on {self.device} ...")
 
-        # ── Classifier ────────────────────────────────────────────────────────
+        # ── Classifier (delegated to src/classifier.py) ───────────────────────
         print(f"  Loading classifier from {CLASSIFIER_PATH} ...")
-        self.clf_tokenizer = AutoTokenizer.from_pretrained(CLASSIFIER_PATH)
-        self.clf_model     = AutoModelForSequenceClassification.from_pretrained(
-            CLASSIFIER_PATH
-        ).to(self.device).eval()
+        self.clf_pipeline = load_classifier(
+            CLASSIFIER_PATH,
+            device=str(self.device),
+        )
 
         # ── BART (General) ────────────────────────────────────────────────────
         print(f"  Loading BART from {BART_PATH} ...")
@@ -136,6 +132,9 @@ class DomainRouter:
     def predict_domain(self, text: str) -> dict:
         """Classify the domain of an input text.
 
+        Delegates to src/classifier.py and enriches the result with
+        full probability distribution and low_confidence flag.
+
         Args:
             text: Raw input string (title + abstract recommended).
 
@@ -147,29 +146,33 @@ class DomainRouter:
                 - ``low_confidence`` (bool)  : True if confidence < threshold
                 - ``probabilities``  (dict)  : {"General": float, "Medical": float}
         """
-        inputs = self.clf_tokenizer(
+        # Get label + confidence from classifier.py
+        label, confidence = clf_predict_domain(text, self.clf_pipeline)
+        label_id = next(k for k, v in LABEL_MAP.items() if v == label)
+
+        # Get full probability distribution for both classes
+        encoded = self.clf_pipeline.tokenizer(
             text,
             max_length=CLASSIFIER_MAX_LEN,
             truncation=True,
             padding="max_length",
             return_tensors="pt",
-        ).to(self.device)
+        )
+        encoded = {k: v.to(self.device) for k, v in encoded.items()}
 
         with torch.no_grad():
-            logits = self.clf_model(**inputs).logits
+            logits = self.clf_pipeline.model(**encoded).logits
 
-        probs    = F.softmax(logits, dim=-1).squeeze()
-        label_id = int(probs.argmax().item())
-        confidence = float(probs[label_id].item())
+        probs = F.softmax(logits, dim=-1).squeeze()
 
         return {
-            "label":          LABEL_MAP[label_id],
+            "label":          label,
             "label_id":       label_id,
             "confidence":     round(confidence, 4),
             "low_confidence": confidence < self.threshold,
             "probabilities":  {
                 "General": round(float(probs[0].item()), 4),
-                "Medical": round(float(probs[1].item()), 4),
+                "Medical":  round(float(probs[1].item()), 4),
             },
         }
 
@@ -191,7 +194,9 @@ class DomainRouter:
         elif domain == "Medical":
             return self._summarize_pegasus(text)
         else:
-            raise ValueError(f"Unknown domain: '{domain}'. Expected 'General' or 'Medical'.")
+            raise ValueError(
+                f"Unknown domain: '{domain}'. Expected 'General' or 'Medical'."
+            )
 
     def route(self, text: str) -> dict:
         """Full pipeline: classify domain then generate summary.
@@ -214,12 +219,9 @@ class DomainRouter:
                 - ``probabilities``  (dict)  : per-class softmax scores
                 - ``model_used``     (str)   : human-readable model description
         """
-        # Step 1 — classify
         clf_result = self.predict_domain(text)
         domain     = clf_result["label"]
-
-        # Step 2 — summarize with the routed model
-        summary = self.summarize(text, domain)
+        summary    = self.summarize(text, domain)
 
         return {
             "summary":        summary,
@@ -232,9 +234,6 @@ class DomainRouter:
 
     def route_batch(self, texts: list[str]) -> list[dict]:
         """Route a list of texts through the full pipeline.
-
-        Calls ``route()`` sequentially. For large batches consider
-        batched generation, but sequential is simpler and memory-safe.
 
         Args:
             texts: List of input strings.
