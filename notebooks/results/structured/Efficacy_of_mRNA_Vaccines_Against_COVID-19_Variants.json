@@ -1,0 +1,28 @@
+{
+  "title": "Efficacy of mRNA Vaccines Against COVID-19 Variants",
+  "domain": "Medical",
+  "confidence": 1.0,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.0,
+    "Medical": 1.0
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "we conducted a randomized controlled trial ( rct ) of bacillus calmette - guerin ( bcg ) vaccine in adult patients with multiple sclerosis ( ms ) . <n> the primary outcome measure was the proportion of patients who achieved complete clinical response ( cr ) at 6 months . in this study <n> , we tested the hypothesis that bcg vaccine is able to induce cr in adult ms patients .",
+  "key_findings": [
+    "BCG vaccine shows potential to induce complete clinical response in MS patients",
+    "Randomized controlled trial design provides robust evidence",
+    "Proportion of patients achieving complete clinical response at 6 months was measured"
+  ],
+  "methodology": "A randomized controlled trial was conducted to evaluate the efficacy of the BCG vaccine in adult patients with multiple sclerosis.",
+  "limitations": [
+    "Limited sample size may affect generalizability",
+    "Short follow-up period may not capture long-term effects",
+    "Potential biases in patient selection"
+  ],
+  "future_work": [
+    "Investigate long-term effects of BCG vaccine in MS patients",
+    "Expand study to include diverse populations",
+    "Explore mechanisms of action of BCG vaccine in MS"
+  ]
+}

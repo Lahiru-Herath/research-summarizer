@@ -1,0 +1,62 @@
+[
+  {
+    "row": "BART zero-shot | General (arXiv)",
+    "rouge1": 0.3125,
+    "rouge2": 0.0926,
+    "rougeL": 0.1824,
+    "bertscore_p": 0.8128,
+    "bertscore_r": 0.7637,
+    "bertscore_f1": 0.7871,
+    "elapsed_sec": 1354
+  },
+  {
+    "row": "BART fine-tuned | General (arXiv)",
+    "rouge1": 0.4521,
+    "rouge2": 0.1719,
+    "rougeL": 0.2531,
+    "bertscore_p": 0.8245,
+    "bertscore_r": 0.8203,
+    "bertscore_f1": 0.8219,
+    "elapsed_sec": 2560
+  },
+  {
+    "row": "PEGASUS zero-shot | Medical (PubMed)",
+    "rouge1": 0.4266,
+    "rouge2": 0.1739,
+    "rougeL": 0.2526,
+    "bertscore_p": 0.8227,
+    "bertscore_r": 0.8157,
+    "bertscore_f1": 0.8187,
+    "elapsed_sec": 2712
+  },
+  {
+    "row": "PEGASUS fine-tuned | Medical (PubMed)",
+    "rouge1": 0.3923,
+    "rouge2": 0.1427,
+    "rougeL": 0.23,
+    "bertscore_p": 0.8207,
+    "bertscore_r": 0.7953,
+    "bertscore_f1": 0.8073,
+    "elapsed_sec": 2620
+  },
+  {
+    "row": "BART fine-tuned | Medical (cross-domain)",
+    "rouge1": 0.4063,
+    "rouge2": 0.1541,
+    "rougeL": 0.2275,
+    "bertscore_p": 0.8135,
+    "bertscore_r": 0.805,
+    "bertscore_f1": 0.8086,
+    "elapsed_sec": 2725
+  },
+  {
+    "row": "PEGASUS fine-tuned | General (cross-domain)",
+    "rouge1": 0.3246,
+    "rouge2": 0.0913,
+    "rougeL": 0.1908,
+    "bertscore_p": 0.7941,
+    "bertscore_r": 0.7598,
+    "bertscore_f1": 0.776,
+    "elapsed_sec": 2217
+  }
+]

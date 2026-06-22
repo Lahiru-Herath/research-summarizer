@@ -46,6 +46,8 @@ dependencies = [
     "pip>=26.1.2",
     "tiktoken>=0.13.0",
     "sentencepiece>=0.2.1",
+    "anthropic>=0.111.0",
+    "openai>=2.43.0",
 ]
 
 [build-system]

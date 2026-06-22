@@ -1,0 +1,7 @@
+row,rouge1,rouge2,rougeL,bertscore_p,bertscore_r,bertscore_f1
+BART zero-shot | General (arXiv),0.3125,0.0926,0.1824,0.8128,0.7637,0.7871
+BART fine-tuned | General (arXiv),0.4521,0.1719,0.2531,0.8245,0.8203,0.8219
+PEGASUS zero-shot | Medical (PubMed),0.4266,0.1739,0.2526,0.8227,0.8157,0.8187
+PEGASUS fine-tuned | Medical (PubMed),0.3923,0.1427,0.23,0.8207,0.7953,0.8073
+BART fine-tuned | Medical (cross-domain),0.4063,0.1541,0.2275,0.8135,0.805,0.8086
+PEGASUS fine-tuned | General (cross-domain),0.3246,0.0913,0.1908,0.7941,0.7598,0.776

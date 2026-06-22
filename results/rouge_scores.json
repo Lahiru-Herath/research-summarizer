@@ -1,0 +1,38 @@
+[
+  {
+    "row": "BART zero-shot | General (arXiv)",
+    "rouge1": 0.3125,
+    "rouge2": 0.0926,
+    "rougeL": 0.1824
+  },
+  {
+    "row": "BART fine-tuned | General (arXiv)",
+    "rouge1": 0.4521,
+    "rouge2": 0.1719,
+    "rougeL": 0.2531
+  },
+  {
+    "row": "PEGASUS zero-shot | Medical (PubMed)",
+    "rouge1": 0.4266,
+    "rouge2": 0.1739,
+    "rougeL": 0.2526
+  },
+  {
+    "row": "PEGASUS fine-tuned | Medical (PubMed)",
+    "rouge1": 0.3923,
+    "rouge2": 0.1427,
+    "rougeL": 0.23
+  },
+  {
+    "row": "BART fine-tuned | Medical (cross-domain)",
+    "rouge1": 0.4063,
+    "rouge2": 0.1541,
+    "rougeL": 0.2275
+  },
+  {
+    "row": "PEGASUS fine-tuned | General (cross-domain)",
+    "rouge1": 0.3246,
+    "rouge2": 0.0913,
+    "rougeL": 0.1908
+  }
+]
