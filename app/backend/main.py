@@ -20,11 +20,11 @@ async def lifespan(app: FastAPI):
     and StructuredOutputGenerator (OpenAI client). This takes ~30–60s
     on first run as models are moved to GPU.
     """
-    print("Loading ResearchSummarizer... (this may take a minute)")
+    # print("Loading ResearchSummarizer... (this may take a minute)")
     app.state.summarizer = ResearchSummarizer(save_outputs=True)
-    print("ResearchSummarizer ready.")
+    # print("ResearchSummarizer ready.")
     yield
-    print("Shutting down — releasing model memory.")
+    # print("Shutting down — releasing model memory.")
     del app.state.summarizer
 
 

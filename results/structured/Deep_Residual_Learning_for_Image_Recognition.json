@@ -1,0 +1,26 @@
+{
+  "title": "Deep Residual Learning for Image Recognition",
+  "domain": "General",
+  "confidence": 0.9997,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.9997,
+    "Medical": 0.0003
+  },
+  "model_used": "BART fine-tuned (facebook/bart-large-cnn → arXiv)",
+  "summary": "deep convolutional neural networks have led to a series of breakthroughs for image classiﬁcation . \n deep networks naturally integrate low/mid/high-level features in an end-to-end multi-layer fashion , and the number of stacked layers ( depth ) can be enriched\nby stacking more layers . on the challenging image recognition task \n , the depth of representations is of central importance , and recent evidence reveals that network depth is of crucial importance .    in this paper \n we present a residual learning framework to ease the training of networks that are substantially deeper than those used\npreviously . we explicitly reformulate the layers as learn-ing residual functions with reference to the layer inputs , in-stead of learning unreferenced functions . we provide com-prehensive empirical evidence showing that these residual\nnetworks are easier to optimize , and can gain accuracy fromconsiderably increased depth .",
+  "key_findings": [
+    "Deep residual networks improve image classification accuracy.",
+    "Residual learning framework eases the training of deeper networks.",
+    "Empirical evidence shows that deeper networks are easier to optimize."
+  ],
+  "methodology": "The authors reformulate layers as learning residual functions with reference to layer inputs, allowing for deeper network architectures.",
+  "limitations": [
+    "The study primarily focuses on image classification tasks.",
+    "The performance on other types of tasks is not evaluated."
+  ],
+  "future_work": [
+    "Explore the application of residual learning in other domains.",
+    "Investigate the impact of residual networks on real-time image processing."
+  ]
+}

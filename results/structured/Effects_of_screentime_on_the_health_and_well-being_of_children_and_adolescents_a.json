@@ -1,0 +1,28 @@
+{
+  "title": "Effects of screentime on the health and well-being of children and adolescents: a systematic review of reviews",
+  "domain": "Medical",
+  "confidence": 1.0,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.0,
+    "Medical": 1.0
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "objectives : to systematically examine the evidence for and harms of screentime in children and young people.methods:we searched electronic databases for systematic reviews of evidence on screentime effects . <n> we included studies published in english between january 1 , 2000 and december 31 , 2015.results:we identified eight studies . screentime was associated with symptoms of depression , anxiety , social support , physical activity , sleep , quality of life , and healthy eating . on average , <n> children and adolescents were exposed to screentime for 3 h per day , including weekends , school recesses , sport , computer use , television , video games , outdoors , on the internet , in front of a computer , or on the computer alone.conclusions:the evidence suggests that screentime is associated with poorer health and well - being .",
+  "key_findings": [
+    "Screentime is associated with symptoms of depression and anxiety in children and adolescents.",
+    "Increased screentime correlates with lower levels of physical activity and quality of life.",
+    "Children and adolescents are exposed to an average of 3 hours of screentime per day."
+  ],
+  "methodology": "We conducted a systematic review by searching electronic databases for systematic reviews published in English from January 1, 2000, to December 31, 2015.",
+  "limitations": [
+    "The review only included studies published in English.",
+    "The studies analyzed were limited to a specific time frame (2000-2015).",
+    "Potential biases in the included studies may affect the overall conclusions."
+  ],
+  "future_work": [
+    "Investigate the long-term effects of screentime on mental health.",
+    "Explore interventions to reduce screentime among children and adolescents.",
+    "Examine the impact of different types of screentime on health outcomes."
+  ]
+}

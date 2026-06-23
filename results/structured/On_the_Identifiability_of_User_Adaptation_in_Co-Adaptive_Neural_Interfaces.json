@@ -1,0 +1,27 @@
+{
+  "title": "On the Identifiability of User Adaptation in Co-Adaptive Neural Interfaces",
+  "domain": "General",
+  "confidence": 0.9996,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.9996,
+    "Medical": 0.0004
+  },
+  "model_used": "BART fine-tuned (facebook/bart-large-cnn → arXiv)",
+  "summary": "madduri et al . [ 2 ] recently presented an elegant experimental and theoretical framework for study-ing co-adaptive neural interfaces , in which a human user and a machine decoder jointly adapt in closed - loop . \n we show that while the empirical procedure recovers joint closed-loop dynamics , it does not , in general , uniquely identify the user-side adaptation mechanism . this distinction , though subtle , is quite important for inter-preting claims about predicting or shaping human behavior .",
+  "key_findings": [
+    "The empirical procedure recovers joint closed-loop dynamics.",
+    "User-side adaptation mechanisms are not uniquely identifiable.",
+    "The distinction between recovery of dynamics and identification is crucial for interpreting human behavior."
+  ],
+  "methodology": "The study employs an experimental and theoretical framework to analyze co-adaptive neural interfaces involving human users and machine decoders.",
+  "limitations": [
+    "The user-side adaptation mechanism cannot be uniquely identified.",
+    "The framework may not account for all variables influencing adaptation."
+  ],
+  "future_work": [
+    "Develop methods to uniquely identify user-side adaptation mechanisms.",
+    "Explore additional variables that may affect co-adaptive dynamics.",
+    "Investigate implications of non-unique identifiability on behavioral predictions."
+  ]
+}

@@ -11,18 +11,18 @@
   "summary": "in computer science , it is said that most problems reduce to problems of searching and sorting . in artificial intelligence , when a computational agent has a perfect model of its world , \nits problem of reasoning about it s abilities and choosing actions to achieve a goal can \nbe abstractly modelled as the mathematical/computer science problem of searching a \ndirected graph . \n this problem is identical (is the dual ) of the problem of looking from \na start node for a goal node that may or may not be located at the end of one of \n them ( again with no apriori information ) . a problem that is standard in the searching \nof trees in computer science .    in this paper \n , we propose a new approach to improving informed and un - informed search in computerscience .  and \n we show that our approach can be used to improve informed search .",
   "key_findings": [
     "Proposed a new approach to improve informed and uninformed search in computer science.",
-    "Demonstrated that the approach can enhance informed search efficiency.",
-    "Established a connection between searching in directed graphs and reasoning in artificial intelligence."
+    "Demonstrated that the new approach enhances the efficiency of informed search.",
+    "Established a connection between searching directed graphs and reasoning in artificial intelligence."
   ],
-  "methodology": "The paper presents a theoretical framework for improving search algorithms by analyzing the structure of directed graphs and their application in artificial intelligence.",
+  "methodology": "The paper presents a theoretical framework for improving search algorithms, supported by mathematical modeling and analysis.",
   "limitations": [
-    "The approach may not be applicable to all types of search problems.",
-    "Limited empirical validation of the proposed methods.",
-    "The theoretical model may oversimplify complex real-world scenarios."
+    "The proposed methods may not be applicable to all types of search problems.",
+    "Limited empirical validation of the approach across diverse datasets.",
+    "Potential computational complexity not fully addressed."
   ],
   "future_work": [
-    "Conduct empirical studies to validate the proposed approach.",
-    "Explore the application of the method in various AI domains.",
-    "Investigate the integration of the approach with existing search algorithms."
+    "Explore empirical testing of the proposed methods on various search problems.",
+    "Investigate the applicability of the approach in real-world AI applications.",
+    "Develop hybrid models that combine informed and uninformed search techniques."
   ]
 }

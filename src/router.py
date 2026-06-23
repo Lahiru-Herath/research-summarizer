@@ -49,7 +49,7 @@ if not (_PROJECT_ROOT / "outputs").exists():
             _PROJECT_ROOT = parent
             break
 
-print(f"[router.py] Project root resolved to: {_PROJECT_ROOT}")
+# print(f"[router.py] Project root resolved to: {_PROJECT_ROOT}")
 
 # ── Constants ─────────────────────────────────────────────────────────────────
 
@@ -57,7 +57,7 @@ CLASSIFIER_PATH = str(_PROJECT_ROOT / "outputs" / "classifier")
 BART_PATH       = str(_PROJECT_ROOT / "outputs" / "bart_finetuned")
 PEGASUS_PATH    = "google/pegasus-pubmed"   # zero-shot — HF Hub
 
-print(f"Paths:\n  Classifier : {CLASSIFIER_PATH}\n  BART       : {BART_PATH}\n  PEGASUS    : {PEGASUS_PATH}\n")
+# print(f"Paths:\n  Classifier : {CLASSIFIER_PATH}\n  BART       : {BART_PATH}\n  PEGASUS    : {PEGASUS_PATH}\n")
 
 LABEL_MAP = {0: "General", 1: "Medical"}
 SUMMARIZER_MAP = {
@@ -102,30 +102,30 @@ class DomainRouter:
     ) -> None:
         self.device    = device or ("cuda" if torch.cuda.is_available() else "cpu")
         self.threshold = threshold
-        print(f"DomainRouter initialising on {self.device} ...")
+        # print(f"DomainRouter initialising on {self.device} ...")
 
         # ── Classifier (delegated to src/classifier.py) ───────────────────────
-        print(f"  Loading classifier from {CLASSIFIER_PATH} ...")
+        # print(f"  Loading classifier from {CLASSIFIER_PATH} ...")
         self.clf_pipeline = load_classifier(
             CLASSIFIER_PATH,
             device=str(self.device),
         )
 
         # ── BART (General) ────────────────────────────────────────────────────
-        print(f"  Loading BART from {BART_PATH} ...")
+        # print(f"  Loading BART from {BART_PATH} ...")
         self.bart_tokenizer = AutoTokenizer.from_pretrained(BART_PATH)
         self.bart_model     = AutoModelForSeq2SeqLM.from_pretrained(
             BART_PATH
         ).to(self.device).eval()
 
         # ── PEGASUS (Medical) ─────────────────────────────────────────────────
-        print(f"  Loading PEGASUS from {PEGASUS_PATH} ...")
+        # print(f"  Loading PEGASUS from {PEGASUS_PATH} ...")
         self.pegasus_tokenizer = PegasusTokenizer.from_pretrained(PEGASUS_PATH)
         self.pegasus_model     = AutoModelForSeq2SeqLM.from_pretrained(
             PEGASUS_PATH
         ).to(self.device).eval()
 
-        print("DomainRouter ready.\n")
+        # print("DomainRouter ready.\n")
 
     # ── Public API ────────────────────────────────────────────────────────────
 

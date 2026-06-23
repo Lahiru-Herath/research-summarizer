@@ -1,0 +1,86 @@
+[
+  {
+    "title": "Attention Is All You Need",
+    "domain": "General",
+    "fluency": 3,
+    "relevance": 5,
+    "conciseness": 4
+  },
+  {
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 5,
+    "conciseness": 4
+  },
+  {
+    "title": "Deep Residual Learning for Image Recognition",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 4,
+    "conciseness": 3
+  },
+  {
+    "title": "Generative Adversarial Nets",
+    "domain": "General",
+    "fluency": 2,
+    "relevance": 4,
+    "conciseness": 3
+  },
+  {
+    "title": "Improving neural networks by preventing co-adaptation of feature detectors",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 3,
+    "conciseness": 5
+  },
+  {
+    "title": "On the Identifiability of User Adaptation in Co-Adaptive Neural Interfaces",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 5,
+    "conciseness": 3
+  },
+  {
+    "title": "PEGASUS: Pre-training with Extracted Gap-sentences for Abstractive Summarization",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 3,
+    "conciseness": 5
+  },
+  {
+    "title": "On the Identifiability of User Adaptation in Co-Adaptive Neural Interfaces",
+    "domain": "General",
+    "fluency": 5,
+    "relevance": 4,
+    "conciseness": 4
+  },
+  {
+    "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 4,
+    "conciseness": 4
+  },
+  {
+    "title": "Effects of screentime on the health and well-being of children and adolescents: a systematic review of reviews",
+    "domain": "Medical",
+    "fluency": 5,
+    "relevance": 5,
+    "conciseness": 4
+  },
+  {
+    "title": "Interacting Quantum Atoms Method for Crystalline Solids",
+    "domain": "General",
+    "fluency": 5,
+    "relevance": 5,
+    "conciseness": 4
+  },
+  {
+    "title": "Recent Developments in SARS-CoV-2 Neutralizing Antibody Detection Methods",
+    "domain": "Medical",
+    "fluency": 5,
+    "relevance": 4,
+    "conciseness": 4
+  }
+]
