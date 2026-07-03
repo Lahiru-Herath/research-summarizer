@@ -7,7 +7,7 @@ import fitz  # pymupdf
 
 from src.summarizer import ResearchSummarizer
 
-HUMAN_EVAL_PATH = Path("results/human_eval_scores.json")
+HUMAN_EVAL_PATH = Path("../../../results/human_evaluations.json")
 
 
 def extract_text_from_pdf(pdf_bytes: bytes) -> str:
