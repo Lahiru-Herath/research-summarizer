@@ -1,0 +1,28 @@
+{
+  "title": "Practice Patterns and Guideline Non-Adherence in Surgical Management of Appendiceal Carcinoid Tumors",
+  "domain": "Medical",
+  "confidence": 1.0,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.0,
+    "Medical": 1.0
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "background : surgical resection of appendiceal tumors is a common procedure . <n> the aim of this study was to determine the impact of various surgical techniques on the prognosis of patients with primary appendicitis.methods:we performed a retrospective chart review of patients who underwent surgery for appendicectomy between january 1 , 2004 , and december 31 , 2013 , at two general hospitals in the city of sarajevo , bosnia and herzegovina.results:a total of 208 patients were included in the study . among them , the following surgical techniques were used : appendectomy with or without lymphadenectomy ; appendectomy and lymph node dissection ; and appendectomy without dissection . on average , patients underwent 21.4 min of surgery , with an average blood loss of 0.45 l ( sd 0.38 l , range 0.30 to 1.05 l ) . the mean follow - up period was 21.3 months . at the end of the follow up <n> , there was no mortality . in terms of survival , 95% of patients were alive at the time of the last follow-up.conclusions:based on our findings , it was",
+  "key_findings": [
+    "Surgical resection techniques varied among patients with appendiceal tumors.",
+    "Average surgery duration was 21.4 minutes with an average blood loss of 0.45 liters.",
+    "95% of patients were alive at the last follow-up after a mean period of 21.3 months."
+  ],
+  "methodology": "A retrospective chart review was conducted on patients who underwent surgery for appendicectomy from January 1, 2004, to December 31, 2013, at two general hospitals in Sarajevo, Bosnia and Herzegovina.",
+  "limitations": [
+    "The study is limited to a single geographic location.",
+    "It relies on retrospective data, which may introduce bias.",
+    "Sample size may not be representative of all surgical practices."
+  ],
+  "future_work": [
+    "Investigate the long-term outcomes of different surgical techniques.",
+    "Expand the study to include multiple centers for broader data.",
+    "Examine the impact of patient demographics on surgical outcomes."
+  ]
+}

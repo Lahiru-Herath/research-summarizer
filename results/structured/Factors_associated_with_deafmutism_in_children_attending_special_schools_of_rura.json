@@ -1,0 +1,28 @@
+{
+  "title": "Factors associated with deaf‑mutism in children attending special schools of rural central India: A survey",
+  "domain": "Medical",
+  "confidence": 1.0,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.0,
+    "Medical": 1.0
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "background : the aim of this study was to determine the prevalence of hearing impairment among children in the rural areas of karnataka state , india.materials and methods : a cross - sectional study was carried out in all primary and secondary schools of rural area , karnataka state of india . <n> data were collected from the records of the schools selected by the random sampling method.results:a total of 2160 children were included in the study . the prevalence rate of hearing loss in children in rural area was 3.2% ( 95% ci : 2.0%-3.33% ) . in this study , there was no statistically significant difference in prevalence rate between urban and rural areas.conclusions:the study concluded that there is no significant difference between rural and urban areas with regard to hearing impairment .",
+  "key_findings": [
+    "Prevalence of hearing loss in rural children is 3.2%",
+    "No significant difference in prevalence between urban and rural areas",
+    "Study included 2160 children from rural Karnataka"
+  ],
+  "methodology": "A cross-sectional study was conducted in primary and secondary schools of rural Karnataka, with data collected from school records using random sampling.",
+  "limitations": [
+    "Study limited to rural areas of Karnataka",
+    "Data based on school records may not capture all cases",
+    "Cross-sectional design limits causal inferences"
+  ],
+  "future_work": [
+    "Investigate factors contributing to hearing impairment in urban settings",
+    "Conduct longitudinal studies to track hearing loss over time",
+    "Explore interventions to improve hearing health in rural populations"
+  ]
+}

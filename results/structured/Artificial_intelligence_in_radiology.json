@@ -1,0 +1,28 @@
+{
+  "title": "Artificial intelligence in radiology",
+  "domain": "General",
+  "confidence": 0.9983,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.9983,
+    "Medical": 0.0017
+  },
+  "model_used": "BART fine-tuned (facebook/bart-large-cnn → arXiv)",
+  "summary": "artificial intelligence (AI ) algorithms , particularly deep learning , have demonstrated remarkable \nprogress in image-recognition tasks . \n methods ranging from convolutional neural networks to \nvariational autoencoders have found myriad applications in the medical image analysis field , \npropelling it forward at a rapid pace . in this article , we explore how these methods could impact multiple facets of radiology , with a \ngeneral focus on applications in oncology , and demonstrate ways in which these methods are \nadvancing the field . finally , we discuss the challenges facing clinical implementation and provide \nour perspective on how the domain could be advanced .",
+  "key_findings": [
+    "AI algorithms have shown remarkable progress in image-recognition tasks.",
+    "Convolutional neural networks and variational autoencoders are widely used in medical image analysis.",
+    "AI methods are advancing applications in oncology within radiology.",
+    "Challenges exist in the clinical implementation of AI in radiology."
+  ],
+  "methodology": "The article reviews various AI algorithms, particularly deep learning techniques, and their applications in medical image analysis.",
+  "limitations": [
+    "Clinical implementation challenges are not fully addressed.",
+    "The review may not cover all AI methods applicable to radiology."
+  ],
+  "future_work": [
+    "Investigate solutions to overcome clinical implementation challenges.",
+    "Explore additional applications of AI in other areas of radiology.",
+    "Enhance the integration of AI tools in clinical workflows."
+  ]
+}

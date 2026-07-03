@@ -1,0 +1,29 @@
+{
+  "title": "CTIN EXUS: Automatic Cyber Threat Intelligence Knowledge Graph Construction Using Large Language Models",
+  "domain": "General",
+  "confidence": 0.9999,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.9999,
+    "Medical": 0.0001
+  },
+  "model_used": "BART fine-tuned (facebook/bart-large-cnn → arXiv)",
+  "summary": "textual descriptions in cyber threat intelligence ( CTi ) reports , such as security articles and news , are rich\nsources of knowledge about cyber threats , crucial for or-\nganizations to stay informed about the rapidly evolving\n threat landscape . \n however , current knowledge extrac-\ntion methods lack flexibility and generalizability , often re-sulting in inaccurate and incomplete knowledge extraction . to bridge the gap , we propose a novel framework , called CTINexus , leveraging optimized in-context learning (ICl ) of large language models ( llm ) for data-efficient knowledge extraction and high-quality cybersecurity knowl-\nedge graph (CSKg ) construction . unlike existing methods , \nCTinexus requires neither extensive data nor parameter\ntuning and can adapt to various ontologies with minimal\nannotated examples . this is achieved through : ( 1 ) a care-fully designed automatic prompt construction strategy with optimal demonstration retrieval for extracting a wide range of cybersecurity entities and relations ; ( 2 ) a hierarchicalentity alignment technique that canonicalizes the extracted\nknowledge and removes redundancy ; ( 3 ) an long-distance\nrelation prediction technique to further complete the CSkgwith missing links . our extensive evaluations using 150 real-world",
+  "key_findings": [
+    "CTINexus enables data-efficient knowledge extraction from cyber threat intelligence reports.",
+    "The framework adapts to various ontologies with minimal annotated examples.",
+    "It employs a hierarchical entity alignment technique to reduce redundancy in extracted knowledge.",
+    "Long-distance relation prediction enhances the completeness of the constructed cybersecurity knowledge graph."
+  ],
+  "methodology": "CTINexus utilizes optimized in-context learning of large language models for knowledge extraction, incorporating automatic prompt construction and hierarchical entity alignment techniques.",
+  "limitations": [
+    "The framework's performance may vary with different types of cyber threat intelligence reports.",
+    "Limited evaluation on diverse datasets may affect generalizability.",
+    "Potential challenges in adapting to highly specialized ontologies."
+  ],
+  "future_work": [
+    "Explore the application of CTINexus in real-time threat detection systems.",
+    "Investigate the integration of additional data sources for improved knowledge extraction.",
+    "Enhance the framework's adaptability to more complex ontologies."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining",
+  "domain": "Medical",
+  "confidence": 0.956,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.044,
+    "Medical": 0.956
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "the aim of this article is to introduce text mining , which is the extraction of biomedical text from the internet in order to provide relevant information to the biomedical research community . <n> it is the first step to improve the quality of biomedical research literature and to increase the visibility of the research articles in google scholar , science direct , scopus , web of science , and psycinfo databases .",
+  "key_findings": [
+    "Introduction of BioBERT as a pre-trained biomedical language model",
+    "Enhancement of biomedical text mining capabilities",
+    "Improvement in the visibility of biomedical research articles"
+  ],
+  "methodology": "The article presents a novel pre-trained model, BioBERT, specifically designed for biomedical text mining tasks.",
+  "limitations": [
+    "Limited to biomedical text and may not generalize to other domains",
+    "Dependence on the quality of the input data from the internet"
+  ],
+  "future_work": [
+    "Exploration of BioBERT's application in various biomedical tasks",
+    "Integration with other data sources for improved research outcomes"
+  ]
+}

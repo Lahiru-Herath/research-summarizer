@@ -82,5 +82,54 @@
     "fluency": 5,
     "relevance": 4,
     "conciseness": 4
+  },
+  {
+    "title": "Impact of Vancomycin-Induced Changes in the Intestinal Microbiota on the Pharmacokinetics of Simvastatin",
+    "domain": "Medical",
+    "fluency": 3,
+    "relevance": 4,
+    "conciseness": 2
+  },
+  {
+    "title": "CTIN EXUS: Automatic Cyber Threat Intelligence Knowledge Graph Construction Using Large Language Models",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 4,
+    "conciseness": 4
+  },
+  {
+    "title": "Practice Patterns and Guideline Non-Adherence in Surgical Management of Appendiceal Carcinoid Tumors",
+    "domain": "Medical",
+    "fluency": 5,
+    "relevance": 4,
+    "conciseness": 4
+  },
+  {
+    "title": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining",
+    "domain": "Medical",
+    "fluency": 4,
+    "relevance": 5,
+    "conciseness": 4
+  },
+  {
+    "title": "Factors associated with deaf‑mutism in children attending special schools of rural central India: A survey",
+    "domain": "Medical",
+    "fluency": 5,
+    "relevance": 4,
+    "conciseness": 3
+  },
+  {
+    "title": "Artificial intelligence in radiology",
+    "domain": "General",
+    "fluency": 4,
+    "relevance": 5,
+    "conciseness": 5
+  },
+  {
+    "title": "Recent Developments in SARS-CoV-2 Neutralizing Antibody Detection Methods",
+    "domain": "Medical",
+    "fluency": 4,
+    "relevance": 5,
+    "conciseness": 4
   }
 ]

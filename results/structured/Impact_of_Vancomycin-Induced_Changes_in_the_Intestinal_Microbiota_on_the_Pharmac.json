@@ -1,0 +1,28 @@
+{
+  "title": "Impact of Vancomycin-Induced Changes in the Intestinal Microbiota on the Pharmacokinetics of Simvastatin",
+  "domain": "Medical",
+  "confidence": 1.0,
+  "low_confidence": false,
+  "probabilities": {
+    "General": 0.0,
+    "Medical": 1.0
+  },
+  "model_used": "PEGASUS zero-shot (google/pegasus-pubmed)",
+  "summary": "backgroundthe aim of this study was to investigate the effects of oral vancomycin on the microbiota of healthy subjects.methodssix healthy male subjects were administered oral simcomycin ( 40 mg / kg / day ) for 6 days . <n> fecal samples were collected before and after treatment , and metagenomic analysis was performed to determine the composition of gut microbiota.resultsthe fecal content of s. cerevisiae increased after oral van comycin treatment ( p0.001 ) , while it decreased after simcvastatin treatment . in addition , the relative abundance of fecal metabolites was altered in the study , which included 2,3,7,8-tetrachlorodibenzo - p - dioxin ( tcdd ) and dimethyl sulfoxide ( dmso).conclusionsthe study suggests that the oral administration of t. comycin results in changes of the gut microbiota in healthy subjects .",
+  "key_findings": [
+    "Oral vancomycin treatment increased the fecal content of S. cerevisiae.",
+    "Simvastatin treatment decreased the fecal content of S. cerevisiae.",
+    "The relative abundance of fecal metabolites was altered after treatments."
+  ],
+  "methodology": "Six healthy male subjects were administered oral simvastatin (40 mg/kg/day) for 6 days, and fecal samples were collected before and after treatment for metagenomic analysis.",
+  "limitations": [
+    "Study limited to a small sample size of six subjects.",
+    "Only male subjects were included, limiting generalizability.",
+    "Short duration of treatment may not reflect long-term effects."
+  ],
+  "future_work": [
+    "Investigate the effects of vancomycin on a larger and more diverse population.",
+    "Explore the long-term impacts of vancomycin on gut microbiota and pharmacokinetics.",
+    "Examine the mechanisms behind the changes in fecal metabolites."
+  ]
+}
